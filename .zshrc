@@ -33,3 +33,12 @@ _update_terminal_title() {
   builtin printf '\033]2;%s %s\007' "$IN_USE_SHELL" "$PWD"
 }
 add-zsh-hook precmd _update_terminal_title
+
+# opencode
+export PATH=/Users/miter/.opencode/bin:$PATH
+
+# >>> grok installer >>>
+export PATH="$HOME/.grok/bin:$PATH"
+fpath=(~/.grok/completions/zsh $fpath)
+autoload -Uz compinit && compinit -C
+# <<< grok installer <<<
